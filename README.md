@@ -17,8 +17,9 @@ this.$notify.clear();	关闭所有提示框
 |:--------:|:--------:|:-----------------:|:----:|
 | message  | string   | 提示框说明          | null |
 | title    | string   | 提示框标题          | null |
-| content  | string   | 提示语             | null |
+| content  | string   | 提示语              | null |
 | duration | number	  | 延时关闭时间        | 4500 |
-| autoClose| boolean  | 自动关闭           | true |
-| onClick  | function | 点击提示框事件      | null |
+| autoClose| string   | 自动关闭            | true |
+| onClick  | function | 点击提示框事件       | null |
 | onClose  | function | 关闭提示框回调事件   | null |
+| position | string   | 提示框出现位置       |'top-left'|
