@@ -57,7 +57,7 @@ export default {
         //如果调路由的话,notification消失
         let that = this;
         if (window) {window.addEventListener('hashchange', () => { that.visible = false })};
-    }
+    },
     mounted () {
         //开场动画
         this.startTimer();
