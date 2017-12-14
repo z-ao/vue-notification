@@ -32,13 +32,13 @@ let Notification = function (options) {
     option.closeEvent   = Notification.closeEvent;
     option.position     = position;
     //实例提示框
-    instance = new NotificationConstructor({
+	instance = new NotificationConstructor({
         data: option
     });
 
-    instance.vm = instance.$mount();
+  	instance.vm = instance.$mount();
     //插入提示框
-    document.body.appendChild(instance.vm.$el);
+  	document.body.appendChild(instance.vm.$el);
 
     InstanceArr[tag] = instance;
     tag++;
@@ -50,14 +50,14 @@ let Notification = function (options) {
 */
 Notification.closeEvent = function (tag) {
     let _position       = InstanceArr[tag].position;
-    let horizontal      = _position.split('-')[0];
+    let vertical        = _position.split('-')[0];
     let h               = 16;         //重设高度
     InstanceArr[tag]    = null;      //清除对应数据
 
     InstanceArr.filter((instance) => {
         return instance && instance.position === _position;
     }).forEach((item) => {
-        item.offset[horizontal] = h;
+        item.offset[vertical] = h;
         h += item.$el.offsetHeight + 5;
     })
 };
